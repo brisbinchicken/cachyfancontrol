@@ -1,0 +1,2 @@
+d /run/cachyfancontrol 0775 root cachyfan -
+d /etc/cachyfancontrol 0775 root cachyfan -

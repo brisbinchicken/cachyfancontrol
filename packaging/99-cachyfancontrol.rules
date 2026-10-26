@@ -1,0 +1,3 @@
+# Allow members of the 'cachyfan' group to access hwmon PWM and thermal fan cooling devices directly if needed
+SUBSYSTEM=="hwmon", ACTION=="add|change", RUN+="/bin/sh -c 'chgrp -f cachyfan /sys%p/pwm* && chmod -f g+w /sys%p/pwm* || true'"
+SUBSYSTEM=="thermal", KERNEL=="cooling_device*", ACTION=="add|change", RUN+="/bin/sh -c 'chgrp -f cachyfan /sys%p/cur_state && chmod -f g+w /sys%p/cur_state || true'"

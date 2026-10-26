@@ -1,0 +1,14 @@
+[package]
+name = "cachyfancontrol-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "Core mathematical algorithms, fan curves, OLS trend PID, calibration, and Linux hwmon HAL for CachyFanControl"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+log.workspace = true
+thiserror.workspace = true
+libc = "0.2"

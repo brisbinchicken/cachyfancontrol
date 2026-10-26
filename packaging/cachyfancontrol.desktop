@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=CachyFanControl
+GenericName=Hardware Fan Control
+Comment=Native CachyOS Fan Control GUI (Curves, Auto OLS/PID, Mix Sensors, Calibration)
+Exec=/usr/bin/cachyfancontrol-gui
+Icon=cachyfancontrol
+Terminal=false
+Type=Application
+Categories=System;Settings;HardwareSettings;Monitor;
+Keywords=fan;pwm;hwmon;temperature;cooling;cachyos;curve;pid;
+StartupWMClass=org.hearnelabs.cachyfancontrol

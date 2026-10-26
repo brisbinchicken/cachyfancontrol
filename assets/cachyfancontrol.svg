@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2AF" />
+      <stop offset="100%" stop-color="#46A0F5" />
+    </linearGradient>
+    <linearGradient id="bladeTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E8C2" />
+      <stop offset="100%" stop-color="#009E83" />
+    </linearGradient>
+    <linearGradient id="bladeBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#46A0F5" />
+      <stop offset="100%" stop-color="#1E68B8" />
+    </linearGradient>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#111318" />
+      <stop offset="65%" stop-color="#181C24" />
+      <stop offset="88%" stop-color="#F5AF32" />
+      <stop offset="100%" stop-color="#EB5555" />
+    </radialGradient>
+  </defs>
+
+  <!-- Dark background rounded tile -->
+  <rect x="8" y="8" width="240" height="240" rx="44" fill="#111318" />
+
+  <!-- Outer CachyOS Hexagon Frame -->
+  <polygon points="128,20 222,74 222,182 128,236 34,182 34,74"
+           fill="#161920" stroke="url(#hexGrad)" stroke-width="10" stroke-linejoin="round" />
+
+  <!-- Inner Shroud Ring -->
+  <circle cx="128" cy="128" r="82" fill="#0E1015" stroke="#263040" stroke-width="4" />
+
+  <!-- 8 Swept Turbine Fan Blades -->
+  <g transform="translate(128,128)">
+    <path d="M 0,-26 C 18,-48 38,-68 18,-78 C -4,-82 -16,-56 -12,-24 Z" fill="url(#bladeTeal)" transform="rotate(0)" />
+    <path d="M 0,-26 C 18,-48 38,-68 18,-78 C -4,-82 -16,-56 -12,-24 Z" fill="url(#bladeTeal)" transform="rotate(45)" />
+    <path d="M 0,-26 C 18,-48 38,-68 18,-78 C -4,-82 -16,-56 -12,-24 Z" fill="url(#bladeBlue)" transform="rotate(90)" />
+    <path d="M 0,-26 C 18,-48 38,-68 18,-78 C -4,-82 -16,-56 -12,-24 Z" fill="url(#bladeBlue)" transform="rotate(135)" />
+    <path d="M 0,-26 C 18,-48 38,-68 18,-78 C -4,-82 -16,-56 -12,-24 Z" fill="url(#bladeBlue)" transform="rotate(180)" />
+    <path d="M 0,-26 C 18,-48 38,-68 18,-78 C -4,-82 -16,-56 -12,-24 Z" fill="url(#bladeBlue)" transform="rotate(225)" />
+    <path d="M 0,-26 C 18,-48 38,-68 18,-78 C -4,-82 -16,-56 -12,-24 Z" fill="url(#bladeTeal)" transform="rotate(270)" />
+    <path d="M 0,-26 C 18,-48 38,-68 18,-78 C -4,-82 -16,-56 -12,-24 Z" fill="url(#bladeTeal)" transform="rotate(315)" />
+  </g>
+
+  <!-- Central Thermal Hub -->
+  <circle cx="128" cy="128" r="30" fill="#161922" stroke="#00D2AF" stroke-width="4" />
+  <circle cx="128" cy="128" r="21" fill="url(#coreGlow)" />
+  <circle cx="128" cy="128" r="11" fill="#111318" />
+</svg>

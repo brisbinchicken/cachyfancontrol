@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/cachyfancontrol-core",
+    "crates/cachyfancontrold",
+    "crates/cachyfancontrol-gui",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["HearneLabs"]
+description = "Native CachyOS (Arch Linux) fan control daemon and Wayland GUI reverse-engineered from FanControl"
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+log = "0.4"
+env_logger = "0.11"
+thiserror = "2.0"

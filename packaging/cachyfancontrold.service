@@ -1,0 +1,27 @@
+[Unit]
+Description=CachyFanControl Hardware Daemon (Native Linux FanControl Engine)
+Documentation=https://github.com/brisbinchicken/CachyFanControl
+After=multi-user.target lm_sensors.service
+Wants=lm_sensors.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/cachyfancontrold --socket /run/cachyfancontrol/daemon.sock --config /etc/cachyfancontrol/config.json
+# Hardware safety guarantee: even if killed via SIGKILL, always return PWM control to BIOS/firmware (pwmX_enable=2)
+ExecStopPost=/usr/bin/cachyfancontrold --restore-bios
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=5
+RuntimeDirectory=cachyfancontrol
+RuntimeDirectoryMode=0775
+ConfigurationDirectory=cachyfancontrol
+ConfigurationDirectoryMode=0755
+Group=cachyfan
+
+# Hardening while preserving /sys/class/hwmon & /sys/class/thermal write access
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[package]
+name = "cachyfancontrold"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "Systemd background daemon for CachyFanControl with hardware safety fallbacks"
+
+[dependencies]
+cachyfancontrol-core = { path = "../cachyfancontrol-core" }
+serde.workspace = true
+serde_json.workspace = true
+log.workspace = true
+env_logger.workspace = true
+libc = "0.2"

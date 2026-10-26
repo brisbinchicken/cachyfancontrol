@@ -1,0 +1,25 @@
+post_install() {
+    systemd-sysusers cachyfancontrol.conf 2>/dev/null || true
+    systemd-tmpfiles --create cachyfancontrol.conf 2>/dev/null || true
+    udevadm control --reload-rules 2>/dev/null || true
+    udevadm trigger --subsystem-match=hwmon 2>/dev/null || true
+    echo ""
+    echo "==> CachyFanControl installed successfully!"
+    echo "==> 1. Enable and start the hardware fan control daemon:"
+    echo "       sudo systemctl enable --now cachyfancontrold.service"
+    echo "==> 2. Add your user to the 'cachyfan' group:"
+    echo "       sudo usermod -aG cachyfan \$USER"
+    echo "==> 3. Launch the Wayland GUI:"
+    echo "       cachyfancontrol-gui"
+    echo ""
+}
+
+post_upgrade() {
+    post_install
+}
+
+pre_remove() {
+    systemctl stop cachyfancontrold.service 2>/dev/null || true
+    systemctl disable cachyfancontrold.service 2>/dev/null || true
+    /usr/bin/cachyfancontrold --restore-bios 2>/dev/null || true
+}

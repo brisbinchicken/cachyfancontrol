@@ -1,0 +1,22 @@
+[package]
+name = "cachyfancontrol-gui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "Wayland-native card-based GUI for CachyFanControl built with eframe/egui"
+
+[dependencies]
+cachyfancontrol-core = { path = "../cachyfancontrol-core" }
+serde.workspace = true
+serde_json.workspace = true
+log.workspace = true
+env_logger.workspace = true
+eframe = { version = "0.31", default-features = false, features = [
+    "default_fonts",
+    "glow",
+    "wayland",
+    "x11",
+] }
+egui = "0.31"
+egui_plot = "0.31"

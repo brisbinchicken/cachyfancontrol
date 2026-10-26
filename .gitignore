@@ -1,0 +1,16 @@
+# Rust / Cargo build artifacts
+/target/
+**/*.rs.bk
+
+# Arch Linux makepkg build artifacts
+/pkg/
+/src/
+*.pkg.tar*
+*.log
+
+# Local IDE / OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
